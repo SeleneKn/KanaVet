@@ -121,10 +121,10 @@ function inicializarBotones() {
 document.addEventListener("DOMContentLoaded", () => {
   
   // Cargar el menú y CUANDO termine, activar sus botones
-  cargarComponente("../html/menu.html", "menuContainer", inicializarBotones);
+  cargarComponente("./html/menu.html", "menuContainer", inicializarBotones);
   
   // Cargar el footer
-  cargarComponente("../html/footer.html", "footerContainer");
+  cargarComponente("./html/footer.html", "footerContainer");
 
   // Autoplay Música (Primer clic en cualquier lado)
   document.addEventListener('click', function iniciarMusica() {
