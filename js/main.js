@@ -38,6 +38,15 @@ function playCuteSound(type = 'click') {
 
 // ---------- Función para Cargar el Menú y el Footer ----------
 function cargarComponente(rutaArchivo, idContainer, callback) {
+  // Detecta si estamos dentro de la carpeta /html o en la raíz
+  const enSubcarpeta = window.location.pathname.includes('/html/');
+  
+  // Si estamos en /html, la ruta es "../html/menu.html". Si estamos en la raíz, es "./html/menu.html"
+  let rutaFinal = rutaArchivo;
+  if (enSubcarpeta && rutaArchivo.startsWith('./html/')) {
+      rutaFinal = rutaArchivo.replace('./html/', '../html/');
+  }
+  
   fetch(rutaArchivo)
     .then(respuesta => {
       if (!respuesta.ok) throw new Error(`No se pudo cargar: ${rutaArchivo}`);
