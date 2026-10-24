@@ -46,17 +46,16 @@ function cargarComponente(rutaArchivo, idContainer, callback) {
   if (enSubcarpeta && rutaArchivo.startsWith('./html/')) {
       rutaFinal = rutaArchivo.replace('./html/', '../html/');
   }
-  
-  fetch(rutaArchivo)
+
+  fetch(rutaFinal)
     .then(respuesta => {
-      if (!respuesta.ok) throw new Error(`No se pudo cargar: ${rutaArchivo}`);
+      if (!respuesta.ok) throw new Error(`No se pudo cargar: ${rutaFinal}`);
       return respuesta.text();
     })
     .then(htmlContenido => {
       const contenedor = document.getElementById(idContainer);
       if (contenedor) {
         contenedor.outerHTML = htmlContenido;
-        // Si hay una función de callback (como activar los botones), la ejecutamos
         if (callback) callback(); 
       }
     })
