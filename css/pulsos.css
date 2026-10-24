@@ -1,0 +1,261 @@
+/* ============================================================
+   ESTILOS EXCLUSIVOS PARA EL CONTADOR DE PULSOS
+   ============================================================ */
+
+#pulsos-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FDF8F5; /* Fondo crema de la página */
+  padding: 2rem;
+}
+
+/* Centrar la tarjeta */
+.pulsos-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Enlace Volver (igual que en dosis) */
+.back-link {
+  display: inline-block;
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  width: 100%;
+  color: #FF8CA3;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: #FF6B8B;
+  transform: translateX(-5px);
+}
+
+/* Tarjeta Blanca (reutilizamos la clase calculator-card) */
+.calculator-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 3.5rem 4rem;
+  box-shadow: 0 15px 35px rgba(255, 140, 163, 0.15), 0 5px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid #FFF0F3;
+  max-width: 600px;
+  width: 100%;
+}
+
+.calculator-card .header {
+  margin-bottom: 2rem;
+}
+
+.calculator-card .header h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2.2rem;
+  color: #E88A9B;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.calculator-card .header p {
+  color: #7A6B6B;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* ============================================================
+   CÍRCULO DEL CONTADOR
+   ============================================================ */
+.pulse-circle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0;
+}
+
+.pulse-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFA9B8, #FF8CA3);
+  border: 8px solid #FFF0F3;
+  color: white;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255, 140, 163, 0.4);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  outline: none;
+  /* Efecto de respiración constante */
+  animation: breathe 2s infinite alternate;
+}
+
+.pulse-circle:hover {
+  background: linear-gradient(135deg, #FF8CA3, #FF6B8B);
+  box-shadow: 0 15px 35px rgba(255, 140, 163, 0.6);
+}
+
+/* Animación al hacer clic */
+.pulse-circle:active, 
+.pulse-circle.clicked {
+  transform: scale(0.9);
+}
+
+/* Animación de respiración */
+@keyframes breathe {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.03); }
+}
+
+/* Animación de latido fuerte (cuando se hace clic) */
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.2); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.2); }
+  70% { transform: scale(1); }
+}
+
+.pulse-circle.beat {
+  animation: heartBeat 0.6s ease-in-out;
+}
+
+/* ============================================================
+   RESULTADO
+   ============================================================ */
+.counter-display h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 4rem;
+  color: #FF8CA3;
+  margin: 0;
+  line-height: 1;
+}
+
+.counter-display p {
+  color: #7A6B6B;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Botón Reset */
+.btn-reset {
+  background-color: transparent;
+  color: #B8A9C4;
+  border: 2px solid #FFD1DB;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-reset:hover {
+  background-color: #FFF0F3;
+  color: #FF6B8B;
+  border-color: #FFA9B8;
+}
+
+/* ============================================================
+   MODO OSCURO
+   ============================================================ */
+html.dark #pulsos-page-wrapper,
+body.dark #pulsos-page-wrapper { background-color: #1A1622; }
+
+html.dark .calculator-card,
+body.dark .calculator-card {
+  background: #2D2636;
+  border-color: #3A3245;
+}
+
+html.dark .calculator-card .header p,
+html.dark .counter-display p,
+body.dark .calculator-card .header p,
+body.dark .counter-display p {
+  color: #B8A9C4;
+}
+
+html.dark .pulse-circle,
+body.dark .pulse-circle {
+  border-color: #3A3245;
+}
+
+html.dark .btn-reset,
+body.dark .btn-reset {
+  border-color: #3A3245;
+  color: #B8A9C4;
+}
+
+html.dark .btn-reset:hover,
+body.dark .btn-reset:hover {
+  background-color: #3A3245;
+  color: #FF8CA3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calculator-card { padding: 2rem 1.5rem; }
+  .calculator-card .header h1 { font-size: 1.8rem; flex-direction: column; }
+  .pulse-circle { width: 140px; height: 140px; font-size: 3rem; }
+  .counter-display h2 { font-size: 3rem; }
+}
+/* ============================================================
+   PANEL DEL CRONÓMETRO Y PPM
+   ============================================================ */
+.timer-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #FFF5F7;
+  border: 1.5px dashed #FFA9B8;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.timer-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #E88A9B;
+}
+
+.timer-item i {
+  font-size: 1.2rem;
+  color: #FF8CA3;
+}
+
+.timer-divider {
+  width: 2px;
+  height: 25px;
+  background-color: #FFD1DB;
+}
+
+/* Modo Oscuro para el panel */
+html.dark .timer-panel,
+body.dark .timer-panel {
+  background-color: #241F2E;
+  border-color: #FF8CA3;
+}
+
+html.dark .timer-item,
+body.dark .timer-item {
+  color: #F3E8EE;
+}

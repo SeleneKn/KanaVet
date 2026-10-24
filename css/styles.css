@@ -1,0 +1,809 @@
+/* ============================================================
+   VARIABLES GLOBALES
+   ============================================================ */
+:root {
+  --bg-cream: #FFFDF9;
+  --pink-soft: #FFD6E0;
+  --pink-accent: #FF85A1;
+  --pink-hover: #FF6B8B;
+  --blue-soft: #C2F0FC;
+  --blue-dark: #3A86FF;
+  --green-pastel: #C1E7E3;
+  --yellow-pastel: #FFEFB9;
+  --text-dark: #4A3E3D;
+  --text-muted: #806D6B;
+  --white: #FFFFFF;
+  --card-shadow: 0 10px 25px rgba(255, 133, 161, 0.12);
+  --transition-smooth: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Variables específicas para tema */
+  --bg-page: #FFFDF9;
+  --bg-section-alt: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-cream-card: #FFFDF9;
+  --text-body: #4A3E3D;
+  --text-muted-body: #806D6B;
+  --border-soft: #F0E6E6;
+  --header-bg: rgba(255, 253, 249, 0.95);
+}
+
+/* ============================================================
+   DARK MODE: redefinimos variables globales
+   ============================================================ */
+html.dark,
+body.dark {
+  --bg-page: #1A1622;
+  --bg-section-alt: #1F1B24;
+  --bg-card: #2D2636;
+  --bg-cream-card: #241F2E;
+  --text-dark: #F3E8EE;
+  --text-body: #E5DCE8;
+  --text-muted: #B8A9C4;
+  --text-muted-body: #B8A9C4;
+  --border-soft: #3A3245;
+  --white: #2D2636; /* cuidado: se usa como fondo de cards */
+  --header-bg: rgba(26, 22, 34, 0.95);
+}
+
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, .brand-logo {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--text-dark);
+}
+
+/* ============================================================
+   FONDO DE PATITAS (reemplaza Tailwind)
+   ============================================================ */
+.paw-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(#FF85A1 0.75px, transparent 0.75px),
+    radial-gradient(#FF85A1 0.75px, #FFF9F5 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+
+html.dark .paw-bg,
+body.dark .paw-bg {
+  background-image:
+    radial-gradient(#FF85A1 0.75px, transparent 0.75px),
+    radial-gradient(#FF85A1 0.75px, #1A1622 0.75px);
+  opacity: 0.10;
+}
+
+/* Aseguramos que el contenido quede por encima del fondo */
+body > header,
+body > section,
+body > div,
+body > footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+header.sticky,
+.navbar-custom {
+  background-color: var(--header-bg) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 2px dashed var(--pink-soft);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s ease;
+  /* CRÍTICO para que el dropdown se vea encima del contenido */
+  overflow: visible !important;
+  z-index: 2000;
+}
+
+.navbar {
+  position: relative;
+  overflow: visible !important;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.4rem 2rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--pink-accent) !important;
+  text-decoration: none;
+}
+
+.brand-logo i { font-size: 1.8rem; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+}
+
+.nav-link-custom {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+
+.nav-link-custom:hover {
+  color: var(--pink-accent);
+  background-color: rgba(255, 214, 224, 0.35);
+}
+
+html.dark .nav-link-custom:hover,
+body.dark .nav-link-custom:hover {
+  background-color: rgba(255, 133, 161, 0.15);
+}
+
+/* Botón píldora Herramientas */
+.btn-nav-cita {
+  background: linear-gradient(135deg, var(--pink-accent), var(--pink-hover));
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(255, 133, 161, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.btn-nav-cita:hover,
+.btn-nav-cita:focus {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(255, 133, 161, 0.4);
+  color: #fff !important;
+}
+
+/* ============================================================
+   DROPDOWN HERRAMIENTAS - FIX Z-INDEX
+   ============================================================ */
+.dropdown-menu {
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+  min-width: 230px;
+  background-color: var(--bg-card);
+  /* Sobrescribe el contenido */
+  z-index: 3000 !important;
+  position: absolute !important;
+  margin-top: 8px;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  color: var(--text-body);
+  font-weight: 500;
+  transition: all 0.2s;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--pink-soft);
+  color: var(--pink-hover);
+}
+
+html.dark .dropdown-item:hover,
+body.dark .dropdown-item:hover {
+  background-color: rgba(255, 133, 161, 0.15);
+  color: var(--pink-accent);
+}
+
+.dropdown-divider {
+  margin: 0.4rem 0;
+  border-color: var(--border-soft);
+}
+
+/* ============================================================
+   BOTONES ACCIÓN (sonido / tema)
+   ============================================================ */
+.btn-action {
+  background-color: var(--pink-soft);
+  color: var(--text-dark);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: var(--transition-smooth);
+  font-size: 1rem;
+}
+
+.btn-action:hover {
+  background-color: var(--pink-accent);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+html.dark .btn-action,
+body.dark .btn-action {
+  background-color: #3A3245;
+  color: var(--text-body);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: 4rem 2rem 5rem;
+  background: radial-gradient(circle at 10% 20%, #FFF5F7 0%, var(--bg-page) 90%);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+html.dark .hero,
+body.dark .hero {
+  background: radial-gradient(circle at 10% 20%, #2A2333 0%, var(--bg-page) 90%);
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--pink-soft);
+  color: var(--pink-hover);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title span { color: var(--pink-accent); }
+
+.hero-description {
+  font-size: 1.15rem;
+  color: var(--text-muted-body);
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink-accent), var(--pink-hover));
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(255, 133, 161, 0.35);
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(255, 133, 161, 0.45);
+}
+
+.btn-secondary {
+  background-color: var(--bg-card);
+  color: var(--text-dark);
+  border: 2px solid var(--pink-soft);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--pink-soft);
+  color: var(--pink-hover);
+  transform: translateY(-3px);
+}
+
+.hero-image-wrapper { position: relative; text-align: center; }
+
+.hero-avatar {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 30px;
+  border: 6px solid var(--bg-card);
+  box-shadow: var(--card-shadow);
+  background-color: var(--blue-soft);
+}
+
+/* ============================================================
+   FEATURES
+   ============================================================ */
+.features {
+  padding: 5rem 2rem;
+  background-color: var(--bg-section-alt);
+  transition: background-color 0.3s ease;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted-body);
+  font-size: 1.1rem;
+}
+
+.features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background-color: var(--bg-cream-card);
+  padding: 2.5rem 1.8rem;
+  border-radius: 24px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+  border-color: var(--pink-soft);
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow);
+}
+
+.feature-card h3 { color: var(--text-dark); }
+.feature-card p { color: var(--text-muted-body); }
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--pink-soft);
+  color: var(--pink-hover);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 1.5rem;
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services {
+  padding: 5rem 2rem;
+  background-color: var(--bg-page);
+  transition: background-color 0.3s ease;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+}
+
+.service-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: var(--transition-smooth);
+  border-left: 5px solid var(--pink-accent);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow);
+}
+
+.service-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-card p { color: var(--text-muted-body); }
+
+/* ============================================================
+   TESTIMONIOS
+   ============================================================ */
+.testimonials {
+  padding: 5rem 2rem;
+  background-color: var(--bg-section-alt);
+  transition: background-color 0.3s ease;
+}
+
+/* Overrides para sección con estilos inline */
+html.dark #testimonios,
+body.dark #testimonios {
+  background-color: var(--bg-section-alt) !important;
+}
+
+html.dark #testimonios h2,
+body.dark #testimonios h2 {
+  color: var(--text-dark) !important;
+}
+
+html.dark #testimonios > .section-header p,
+body.dark #testimonios > .section-header p {
+  color: var(--text-muted-body) !important;
+}
+
+html.dark #testimonios > div:nth-child(2) > div,
+body.dark #testimonios > div:nth-child(2) > div {
+  filter: brightness(0.85) saturate(0.7);
+}
+
+html.dark #testimonios > div:nth-child(2) > div h4,
+body.dark #testimonios > div:nth-child(2) > div h4 {
+  color: var(--text-dark) !important;
+}
+
+html.dark #testimonios > div:nth-child(2) > div p,
+body.dark #testimonios > div:nth-child(2) > div p {
+  color: var(--text-body) !important;
+}
+
+/* ============================================================
+   SECCIÓN CONÓCEME (estilos inline)
+   ============================================================ */
+html.dark #conoceme h2,
+body.dark #conoceme h2 {
+  color: var(--text-dark) !important;
+}
+
+html.dark #conoceme p,
+body.dark #conoceme p {
+  color: var(--text-muted-body) !important;
+}
+
+html.dark #conoceme li,
+html.dark #conoceme li span,
+body.dark #conoceme li,
+body.dark #conoceme li span {
+  color: var(--text-body) !important;
+}
+
+/* ============================================================
+   BOOKING / CONTACTO (estilos inline)
+   ============================================================ */
+.booking {
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, var(--bg-page) 0%, #FFF0F3 100%);
+  transition: background 0.3s ease;
+}
+
+html.dark .booking,
+body.dark .booking {
+  background: linear-gradient(180deg, var(--bg-page) 0%, #2A1F2B 100%);
+}
+
+/* Contenedor principal (inline: background: white) */
+html.dark #contacto > div,
+body.dark #contacto > div {
+  background: var(--bg-card) !important;
+  border-color: var(--border-soft) !important;
+}
+
+/* Columna izquierda (inline: #FDE2E4) */
+html.dark #contacto > div > div:first-child,
+body.dark #contacto > div > div:first-child {
+  background-color: #2E2436 !important;
+}
+
+/* Columna derecha (inline: white) */
+html.dark #contacto > div > div:last-child,
+body.dark #contacto > div > div:last-child {
+  background: var(--bg-card) !important;
+}
+
+/* Textos */
+html.dark #contacto h2,
+body.dark #contacto h2 {
+  color: var(--text-dark) !important;
+}
+
+html.dark #contacto p,
+html.dark #contacto li,
+body.dark #contacto p,
+body.dark #contacto li {
+  color: var(--text-body) !important;
+}
+
+/* Inputs / select / textarea */
+html.dark #contacto input,
+html.dark #contacto select,
+html.dark #contacto textarea,
+body.dark #contacto input,
+body.dark #contacto select,
+body.dark #contacto textarea {
+  background-color: #241F2E !important;
+  border-color: var(--border-soft) !important;
+  color: var(--text-body) !important;
+}
+
+html.dark #contacto input::placeholder,
+html.dark #contacto textarea::placeholder,
+body.dark #contacto input::placeholder,
+body.dark #contacto textarea::placeholder {
+  color: var(--text-muted-body) !important;
+  opacity: 0.6;
+}
+
+html.dark #contacto label,
+body.dark #contacto label {
+  color: var(--text-muted-body) !important;
+}
+
+/* Tarjeta "Atención amorosa" */
+html.dark #contacto > div > div:first-child > div:last-child,
+body.dark #contacto > div > div:first-child > div:last-child {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Círculos con iconos (inline: background white) */
+html.dark #contacto > div > div:first-child ul li > div,
+body.dark #contacto > div > div:first-child ul li > div {
+  background: #3A3245 !important;
+}
+
+/* ============================================================
+   FORM CONTROL (genérico)
+   ============================================================ */
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid var(--border-soft);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: var(--bg-card);
+  color: var(--text-body);
+  transition: var(--transition-smooth);
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--pink-accent);
+  box-shadow: 0 0 0 4px rgba(255, 133, 161, 0.15);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted-body);
+  opacity: 0.7;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background-color: var(--text-dark);
+  color: #FFFFFF;
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+}
+
+html.dark footer,
+body.dark footer {
+  background-color: #120F18;
+}
+
+html.dark footer .brand-logo,
+body.dark footer .brand-logo {
+  color: var(--pink-accent) !important;
+}
+
+html.dark footer p,
+body.dark footer p {
+  color: #B8A9C4;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-links { display: flex; gap: 15px; }
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.social-icon:hover {
+  background-color: var(--pink-accent);
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   PARTÍCULAS DE PATITAS
+   ============================================================ */
+.paw-particle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.5rem;
+  color: var(--pink-accent);
+  animation: pawPop 0.7s ease-out forwards;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes pawPop {
+  0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.5) rotate(0deg); }
+  100% { opacity: 0; transform: translate(-50%, -120px) scale(1.4) rotate(25deg); }
+}
+
+/* ============================================================
+   NAVBAR TOGGLER
+   ============================================================ */
+.navbar-toggler { border: none !important; }
+.navbar-toggler:focus { box-shadow: none !important; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 991px) {
+  .nav-container { padding: 0.6rem 1rem; }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .nav-item { width: 100%; }
+
+  .nav-link-custom {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    box-shadow: none;
+    background: rgba(255, 214, 224, 0.25);
+    margin-top: 0;
+    border-radius: 12px;
+    width: 100%;
+  }
+
+  html.dark .dropdown-menu,
+  body.dark .dropdown-menu {
+    background: rgba(255, 133, 161, 0.10);
+  }
+
+  .btn-nav-cita {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-title { font-size: 2.2rem; }
+
+  .hero-buttons { justify-content: center; }
+}
+
+@media (min-width: 992px) {
+  .nav-container { padding: 0.6rem 2rem; }
+}
+
+/* ============================================================
+   TRANSICIONES SUAVES AL CAMBIAR TEMA
+   ============================================================ */
+body,
+body * {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease;
+}
+
+/* Excepciones: no animar estos */
+.paw-particle,
+.hero-avatar,
+.paw-bg,
+.hero {
+  transition: none !important;
+}

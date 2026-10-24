@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Kana | Dosis</title>
+  <link rel="icon" href="data:image/svg+xml, <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Estilos personalizados (se mantienen intactos) -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/dosis.css">
+
+</head>
+<body class="relative overflow-x-hidden">
+
+  <!-- Background Paw Pattern Overlay -->
+  <div class="paw-bg"></div>
+
+  <!-- ENCABEZADO / BARRA DE NAVEGACIÓN -->
+  <div id="menuContainer"></div>
+
+  <!-- CONTENIDO DE LA CALCULADORA -->
+  <div id="dosis-page-wrapper">
+
+      
+      <div class="dosis-container">
+          <div class="calculator-card">
+              <div class="header">
+                  <h1>🧮 Calculadora de Dosis Felina</h1>
+                  <p>Calcula con precisión la dosis de medicamentos para los michis 🐱</p>
+              </div>
+
+              <form id="doseForm">
+                  <div class="form-group">
+                      <label for="weight">Peso del paciente (kg):</label>
+                      <input type="number" id="weight" step="0.01" placeholder="Ej. 4.2" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="dose">Dosis prescrita (mg/kg):</label>
+                      <input type="number" id="dose" step="0.01" placeholder="Ej. 5" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="concentration">Concentración de la presentación (mg/ml):</label>
+                      <input type="number" id="concentration" step="0.01" placeholder="Ej. 100" required>
+                  </div>
+
+                  <button type="button" class="btn-calc" onclick="calculateDose()">🐾 Calcular Dosis</button>
+              </form>
+
+              <div class="result-box" id="resultBox">
+                  <h3>Resultado del Cálculo</h3>
+                  <p>Dosis total requerida: <strong id="totalMg">0</strong> mg</p>
+                  <p>Volumen a administrar: <strong id="totalMl">0</strong> ml</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div id="footerContainer"></div>
+
+  <!-- ============ AUDIO ============ -->
+  <audio id="bgMusic" loop>
+    <source src="../audio/snoozybeats-cat-cafe-lofi-309576.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS personalizado -->
+  <script src="../js/main.js"></script>
+  <script src="../js/calculadoraDosis.js"></script>
+ 
+
+</body>
+</html>

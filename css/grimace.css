@@ -1,0 +1,201 @@
+/* ============================================================
+   ESTILOS EXCLUSIVOS PARA GRIMACE SCALE
+   ============================================================ */
+
+#grimace-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FDF8F5; /* Fondo crema */
+  padding: 2rem;
+}
+
+.grimace-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  max-width: 650px;
+  margin: 0 auto 1.5rem auto;
+  width: 100%;
+  color: #FF8CA3;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: #FF6B8B;
+  transform: translateX(-5px);
+}
+
+/* Tarjeta */
+.grimace-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 3rem;
+  border: 2px solid #FFA9B8; 
+  box-shadow: 0 10px 30px rgba(255, 140, 163, 0.1);
+  max-width: 650px;
+  width: 100%;
+}
+
+/* Encabezado */
+.grimace-card .header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grimace-card .header h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.8rem;
+  color: #D9536F;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: #4A3E3D;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid #FFD1DB;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  color: #4A3E3D;
+  background-color: #FFFFFF;
+  transition: all 0.3s ease;
+  outline: none;
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  border-color: #FF8CA3;
+  box-shadow: 0 0 0 4px rgba(255, 140, 163, 0.1);
+}
+
+/* Botón Calcular */
+.btn-evaluar {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #FFA9B8; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-evaluar:hover {
+  background-color: #FF8CA3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 140, 163, 0.3);
+}
+
+/* Caja de Resultados */
+.result-box {
+  display: none;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #FFF5F7;
+  border-radius: 12px;
+  border: 1px dashed #FFA9B8;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.result-box h3 {
+  font-family: 'Fredoka', sans-serif;
+  color: #D9536F;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.result-box p {
+  font-family: 'Quicksand', sans-serif;
+  color: #4A3E3D;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.result-box strong {
+  color: #FF8CA3;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.alert-message {
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Colores de alerta */
+.alert-green { background-color: #D1FAE5; color: #065F46; }
+.alert-yellow { background-color: #FEF3C7; color: #92400E; }
+.alert-red { background-color: #FEE2E2; color: #991B1B; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modo Oscuro */
+html.dark #grimace-page-wrapper,
+body.dark #grimace-page-wrapper { background-color: #1A1622; }
+
+html.dark .grimace-card,
+body.dark .grimace-card {
+  background: #2D2636;
+  border-color: #FF8CA3;
+}
+
+html.dark .form-group label,
+body.dark .form-group label {
+  color: #B8A9C4;
+}
+
+html.dark .form-group select,
+body.dark .form-group select {
+  background-color: #241F2E;
+  border-color: #3A3245;
+  color: #F3E8EE;
+}
+
+html.dark .result-box,
+body.dark .result-box {
+  background-color: #241F2E;
+  border-color: #FF8CA3;
+}
+
+html.dark .result-box p,
+body.dark .result-box p {
+  color: #F3E8EE;
+}

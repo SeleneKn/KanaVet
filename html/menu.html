@@ -1,0 +1,65 @@
+<!-- ============ BARRA DE NAVEGACIÓN ============ -->
+  <header class="sticky top-0 z-50 navbar-custom">
+    <nav class="navbar navbar-expand-lg py-2" style="background: transparent; border: none; box-shadow: none;">
+      <div class="nav-container container-fluid flex-wrap">
+
+        <!-- Logo / Marca -->
+        <a href="../index.html" class="brand-logo navbar-brand">
+          <i class="fas fa-cat"></i> Dra. A. Kanagusico
+        </a>
+
+        <!-- Botón hamburguesa Bootstrap (móvil) -->
+        <button class="navbar-toggler border-0 shadow-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars" style="color: var(--pink-accent); font-size: 1.5rem;"></i>
+        </button>
+
+        <!-- Contenido colapsable -->
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="nav-links navbar-nav ms-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+
+            <li class="nav-item"><a class="nav-link-custom" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link-custom" href="../index.html#porque-elegirme">Conóceme</a></li>
+            <li class="nav-item"><a class="nav-link-custom" href="../index.html#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link-custom" href="../index.html#testimonios">Testimonios</a></li>
+            <li class="nav-item"><a class="nav-link-custom" href="../index.html#contacto">Contacto</a></li>
+
+            <!-- ===== DROPDOWN HERRAMIENTAS (CORREGIDO) ===== -->
+            <li class="nav-item dropdown">
+              <a class="btn-nav-cita nav-link dropdown-toggle d-flex align-items-center justify-content-center"
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-toolbox me-2"></i> Herramientas
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="../html/CalculadoraDosis.html">🧮 Calculadora de Dosis</a></li>
+                <li><a class="dropdown-item" href="../html/recetario.html">🖨️ Recetas</a></li>
+                <li><a class="dropdown-item" href="../html/nutricion.html">⚖️ Nutrición</a></li>
+                <li><a class="dropdown-item" href="../html/cronometro.html">⏱️ Pulsos</a></li>
+                <li><a class="dropdown-item" href="../html/escalaGrimace.html">🩻 Grimace Scale</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a class="dropdown-item" href="../index.html#contacto">
+                    🐾 Agendar Consulta
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <!-- Controles: sonido + tema -->
+          <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
+            <button id="soundToggle" title="Activar/Desactivar Sonidos Cute" class="btn-action">
+              <i id="soundIcon" class="fa-solid fa-volume-high"></i>
+            </button>
+            <button id="themeToggle" title="Cambiar Tema" class="btn-action">
+              <i id="themeIcon" class="fa-solid fa-moon"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <script src="../js/main.js"></script>

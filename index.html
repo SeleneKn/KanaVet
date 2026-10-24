@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Kana | Especialista en Gatos</title>
+  <link rel="icon" href="data:image/svg+xml, <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Estilos personalizados (se mantienen intactos) -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="relative overflow-x-hidden">
+
+  <!-- Background Paw Pattern Overlay -->
+<div class="paw-bg"></div>
+
+
+  <!-- ENCABEZADO / BARRA DE NAVEGACIÓN -->
+    <div id="menuContainer"></div>
+
+  
+
+  <!-- ============ SECCIÓN HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <i class="fas fa-heart"></i> Medicina 100% Felina
+        </div>
+        <h1 class="hero-title">¡Bienvenidos Tutores de <span>Michis</span>!</h1>
+        <p class="hero-description">
+          Soy la Dra. A. Kanagusico, apasionada por la salud y tranquilidad de tus gatos. Ofrezco atención veterinaria especializada en un ambiente amigable y libre de estrés.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn-primary">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Agendar Consulta</span>
+          </a>
+          <a href="#conoceme" class="btn-secondary">
+            <i class="fa-solid fa-heart" style="color: var(--pink-accent);"></i>
+            <span>Conóceme</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="../img/vetara.jpg"
+             alt="Gato tierno en consulta" class="hero-avatar" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUÉ ELEGIRME ============ -->
+  <section class="features" id="porque-elegirme">
+    <div class="section-header">
+      <h2 class="section-title">¿Por Qué Elegirme? 🐾</h2>
+      <p class="section-subtitle">Tu michi merece una consulta respetuosa, paciente y adaptada a su naturaleza felina.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-paw"></i></div>
+        <h3>Atención Exclusiva Felina</h3>
+        <p>Espacios y técnicas de manejo pensados únicamente en el bienestar y la psicología de los gatos.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-home"></i></div>
+        <h3>Ambiente Cat-Friendly</h3>
+        <p>Consultorio libre de olores o ladridos de perros para minimizar el estrés de tu compañero.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-stethoscope"></i></div>
+        <h3>Cuidado Compasivo</h3>
+        <p>Diagnósticos precisos acompañados de un trato dulce y empático en todo momento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICIOS ============ -->
+  <section class="services" id="servicios">
+    <div class="section-header">
+      <h2 class="section-title">Servicios Especializados ✨</h2>
+      <p class="section-subtitle">Cuidado integral para cada etapa de la vida de tu gato.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3><i class="fas fa-syringe" style="color: var(--pink-accent);"></i> Vacunación y Desparasitación</h3>
+        <p>Esquemas preventivos personalizados según la edad y estilo de vida de tu gatito.</p>
+      </div>
+      <div class="service-card">
+        <h3><i class="fas fa-notes-medical" style="color: var(--pink-accent);"></i> Medicina Preventiva</h3>
+        <p>Chequeos generales periódicos para detectar a tiempo cualquier alteración en su salud.</p>
+      </div>
+      <div class="service-card">
+        <h3><i class="fas fa-fish" style="color: var(--pink-accent);"></i> Asesoría Nutricional</h3>
+        <p>Planes de alimentación adaptados para prevenir la obesidad o problemas renales.</p>
+      </div>
+      <div class="service-card">
+        <h3><i class="fas fa-user-md" style="color: var(--pink-accent);"></i> Diagnóstico Felino</h3>
+        <p>Atención médica especializada en pacientes felinos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONÓCEME (SOBRE MÍ) ============ -->
+  <div class="hero p-0 m-0" style="padding: 0 !important; margin: 0 !important;">
+    <section class="about hero mx-auto" id="conoceme">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;" class="hero">
+        <div style="position: relative; max-width: 450px; margin: 0 auto; width: 100%;">
+          <img src="../img/operando.jpg"
+               alt="Veterinaria examinando un gato relajado"
+               style="width: 100%; height: 380px; object-fit: cover; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
+          <div style="position: absolute; bottom: -20px; right: -20px; background-color: #FF8CA3; color: white; padding: 1.5rem; border-radius: 16px; box-shadow: 0 10px 20px rgba(255, 140, 163, 0.4); max-width: 250px;">
+            <p style="font-weight: 700; font-size: 1.05rem; margin: 0; line-height: 1.4; font-family: 'Quicksand', sans-serif;">
+              "Tratamos a cada gato con el mismo amor que a los nuestros."
+            </p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <span style="color: #FF8CA3; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Sobre Mí</span>
+          <h2 style="font-family: 'Fredoka', sans-serif; font-size: 2.5rem; color: var(--text-dark); line-height: 1.2; margin: 0;">
+            Pasión por el bienestar y tranquilidad felina
+          </h2>
+          <p style="color: #6b7280; font-size: 1.05rem; line-height: 1.7; margin: 0;">
+            Especialista en Medicina y Cirugia de pequeñas especies (UNAM), he dedicado más de una década a comprender la sutil conducta de los gatos. Sé que llevar a tu michi al veterinario puede ser estresante, por eso he adaptado cada paso de mi consulta para que sea una experiencia suave y cariñosa.
+          </p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; align-items: center; gap: 12px; color: #4b5563; font-weight: 600;">
+              <i class="fa-solid fa-circle-check" style="color: #FF8CA3; font-size: 1.2rem;"></i>
+              <span> Medicina Veterinaria y Zootecnia. FMVX-UANM 11+ años de experiencia clínica</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px; color: #4b5563; font-weight: 600;">
+              <i class="fa-solid fa-circle-check" style="color: #FF8CA3; font-size: 1.2rem;"></i>
+              <span>Especialidad en medicina y cirugía de pequeñas especies RESIDENCIA HVE-UNAM</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px; color: #4b5563; font-weight: 600;">
+              <i class="fa-solid fa-circle-check" style="color: #FF8CA3; font-size: 1.2rem;"></i>
+              <span>Diplomado en cardiología clínica Educavet</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ TESTIMONIOS ============ -->
+  <section class="testimonials" id="testimonios" style="padding: 5rem 0; background-color: #fafafa;">
+    <div class="section-header" style="max-width: 1200px; margin: 0 auto 3rem auto; padding: 0 2rem; text-align: center;">
+      <h2 class="section-title" style="font-family: 'Fredoka', sans-serif; font-size: 2.5rem; color: #443530;">Testimonios Felinos 💌</h2>
+      <p class="section-subtitle" style="color: #6b7280; margin-top: 0.5rem;">Lo que dicen otros tutores sobre su experiencia con la Dra.</p>
+    </div>
+
+    <div style="display: flex; gap: 2rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 1rem 2rem 3rem 2rem; max-width: 1200px; margin: 0 auto; scrollbar-width: none; -ms-overflow-style: none;">
+
+      <div style="flex: 0 0 350px; scroll-snap-align: center; background-color: #FEF4EA; border-radius: 20px; padding: 2rem; transition: all 0.3s ease; cursor: pointer;"
+           onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.08)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+          <div style="width: 50px; height: 50px; background-color: #FFD6D6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">🐱</div>
+          <div>
+            <h4 style="margin: 0; font-size: 1.1rem; color: #443530; font-weight: 800;">Michi y Luna</h4>
+            <p style="margin: 0; font-size: 0.85rem; color: #6b7280;">Tutora: Sofía M.</p>
+          </div>
+        </div>
+        <p style="color: #4b5563; font-style: italic; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.5rem;">
+          "¡Miau! Gracias por cuidarme tanto Dra. Mis humanos estaban muy preocupados cuando me enfermé del estómago, pero la consulta fue super suave sin estrés."
+        </p>
+        <div style="color: #FBBF24; font-size: 1.1rem; letter-spacing: 2px;">★ ★ ★ ★ ★</div>
+      </div>
+
+      <div style="flex: 0 0 350px; scroll-snap-align: center; background-color: #FDF2F8; border-radius: 20px; padding: 2rem; transition: all 0.3s ease; cursor: pointer;"
+           onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.08)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+          <div style="width: 50px; height: 50px; background-color: #DCFCE7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">🐾</div>
+          <div>
+            <h4 style="margin: 0; font-size: 1.1rem; color: #1f2937; font-weight: 800;">Tom & Jerry</h4>
+            <p style="margin: 0; font-size: 0.85rem; color: #6b7280;">Tutor: Carlos R.</p>
+          </div>
+        </div>
+        <p style="color: #4b5563; font-style: italic; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.5rem;">
+          "Mi gato solía ponerse muy agresivo en otras clínicas. Con la Dra. estuvo tranquilo desde el primer minuto. El ambiente cat-friendly realmente funciona."
+        </p>
+        <div style="color: #FBBF24; font-size: 1.1rem; letter-spacing: 2px;">★ ★ ★ ★ ★</div>
+      </div>
+
+      <div style="flex: 0 0 350px; scroll-snap-align: center; background-color: #F0FDF4; border-radius: 20px; padding: 2rem; transition: all 0.3s ease; cursor: pointer;"
+           onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.08)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+          <div style="width: 50px; height: 50px; background-color: #FFD6D6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">🐱</div>
+          <div>
+            <h4 style="margin: 0; font-size: 1.1rem; color: #1f2937; font-weight: 800;">Pelusa</h4>
+            <p style="margin: 0; font-size: 0.85rem; color: #6b7280;">Tutora: Ana G.</p>
+          </div>
+        </div>
+        <p style="color: #4b5563; font-style: italic; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.5rem;">
+          "Excelente seguimiento tras la esterilización de Pelusa. Nos dio indicaciones claras y estuvo al pendiente por WhatsApp durante su recuperación."
+        </p>
+        <div style="color: #FBBF24; font-size: 1.1rem; letter-spacing: 2px;">★ ★ ★ ★ ★</div>
+      </div>
+
+      <div style="flex: 0 0 350px; scroll-snap-align: center; background-color: #FFF7ED; border-radius: 20px; padding: 2rem; transition: all 0.3s ease; cursor: pointer;"
+           onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.08)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+          <div style="width: 50px; height: 50px; background-color: #E0E7FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">😺</div>
+          <div>
+            <h4 style="margin: 0; font-size: 1.1rem; color: #1f2937; font-weight: 800;">Bigotes</h4>
+            <p style="margin: 0; font-size: 0.85rem; color: #6b7280;">Tutor: Luis F.</p>
+          </div>
+        </div>
+        <p style="color: #4b5563; font-style: italic; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.5rem;">
+          "La atención a domicilio fue la mejor decisión. Mi gato mayor ya no se estresa con los viajes y la Dra. es súper paciente con él."
+        </p>
+        <div style="color: #FBBF24; font-size: 1.1rem; letter-spacing: 2px;">★ ★ ★ ★ ★</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FORMULARIO DE RESERVA ============ -->
+  <section class="booking" id="contacto" style="padding: 5rem 1rem; display: flex; justify-content: center;">
+    <div style="background: white; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); display: flex; flex-wrap: wrap; max-width: 1000px; width: 100%; overflow: hidden; border: 1px solid #ffe4e6;">
+
+      <div style="background-color: #FDE2E4; padding: 3rem; flex: 1 1 350px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h2 style="font-family: 'Fredoka', sans-serif; font-size: 2rem; color: #1f2937; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+            Reserva tu Cita <i class="fas fa-paw" style="font-size: 1.2rem; color: #9ca3af;"></i>
+          </h2>
+          <p style="color: #4b5563; font-size: 1rem; line-height: 1.6; margin-bottom: 2.5rem;">
+            ¡Hablemos de tu gato! Déjanos tus datos o contáctanos directamente para agendar su consulta.
+          </p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
+            <li style="display: flex; align-items: center; gap: 1rem; color: #4b5563; font-weight: 500;">
+              <div style="background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FF8CA3; box-shadow: 0 4px 10px rgba(255,140,163,0.2);">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              CDMX y Área Metropolitana
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem; color: #4b5563; font-weight: 500;">
+              <div style="background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FF8CA3; box-shadow: 0 4px 10px rgba(255,140,163,0.2);">
+                <i class="fas fa-clock"></i>
+              </div>
+              Lun - Sáb: 9:00 AM - 7:00 PM
+            </li>
+            <li style="display: flex; align-items: center; gap: 1rem; color: #4b5563; font-weight: 500;">
+              <div style="background: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FF8CA3; box-shadow: 0 4px 10px rgba(255,140,163,0.2);">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              +52 55 1234 5678
+            </li>
+          </ul>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.4); padding: 1.5rem; border-radius: 16px; margin-top: 3rem; text-align: center; border: 1px solid rgba(255,255,255,0.6);">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">😺</div>
+          <p style="margin: 0; font-size: 0.85rem; font-weight: 700; color: #4b5563;">Atención amorosa y profesional garantizada.</p>
+        </div>
+      </div>
+
+      <div style="padding: 3rem; flex: 2 1 450px; background: white;">
+        <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.2rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+            <div>
+              <label for="nombreTutor" style="display: block; font-size: 0.75rem; font-weight: 800; color: #6b7280; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Tu Nombre *</label>
+              <input type="text" id="nombreTutor" placeholder="Ej: María López" required style="width: 100%; padding: 0.8rem 1rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 0.95rem; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#FF8CA3'" onblur="this.style.borderColor='#e5e7eb'" />
+            </div>
+            <div>
+              <label for="nombreGato" style="display: block; font-size: 0.75rem; font-weight: 800; color: #6b7280; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Nombre de tu Gato *</label>
+              <input type="text" id="nombreGato" placeholder="Ej: Michi / Luna" required style="width: 100%; padding: 0.8rem 1rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 0.95rem; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#FF8CA3'" onblur="this.style.borderColor='#e5e7eb'" />
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+            <div>
+              <label for="telefono" style="display: block; font-size: 0.75rem; font-weight: 800; color: #6b7280; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">WhatsApp / Teléfono *</label>
+              <input type="tel" id="telefono" placeholder="55 0000 0000" required style="width: 100%; padding: 0.8rem 1rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 0.95rem; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#FF8CA3'" onblur="this.style.borderColor='#e5e7eb'" />
+            </div>
+            <div>
+              <label for="motivo" style="display: block; font-size: 0.75rem; font-weight: 800; color: #6b7280; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Motivo de Consulta</label>
+              <select id="motivo" style="width: 100%; padding: 0.8rem 1rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 0.95rem; outline: none; background-color: white; color: #4b5563; transition: border-color 0.3s;" onfocus="this.style.borderColor='#FF8CA3'" onblur="this.style.borderColor='#e5e7eb'">
+                <option value="Vacunación / Desparasitación">Vacunación / Desparasitación</option>
+                <option value="Chequeo General">Chequeo General</option>
+                <option value="Asesoría Nutricional">Asesoría Nutricional</option>
+                <option value="Problema de Comportamiento">Problema de Comportamiento</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="mensaje" style="display: block; font-size: 0.75rem; font-weight: 800; color: #6b7280; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Mensaje o Notas Especiales</label>
+            <textarea id="mensaje" rows="3" placeholder="Cuéntanos un poco sobre cómo está tu gatito..." style="width: 100%; padding: 0.8rem 1rem; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 0.95rem; outline: none; resize: vertical; transition: border-color 0.3s;" onfocus="this.style.borderColor='#FF8CA3'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
+          </div>
+          <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap;">
+            <button type="submit" style="flex: 1; background-color: #FF8CA3; color: white; border: none; padding: 1rem; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#f0758f'" onmouseout="this.style.backgroundColor='#FF8CA3'">
+              <i class="fas fa-paper-plane"></i> Enviar Solicitud
+            </button>
+            <a href="https://wa.me/525512345678" target="_blank" style="flex: 1; background-color: #25D366; color: white; border: none; padding: 1rem; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1ebe5d'" onmouseout="this.style.backgroundColor='#25D366'">
+              <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> WhatsApp
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+   <div id="footerContainer"></div>
+ <!-- ============ AUDIO ============ -->
+    <audio id="bgMusic" loop>
+  <source src="../audio/snoozybeats-cat-cafe-lofi-309576.mp3" type="audio/mpeg">
+ </audio>
+
+  <!-- Bootstrap 5 JS Bundle (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS personalizado (efectos, sonido, tema, etc.) -->
+  <script src="../js/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+MIT License
+
+Copyright (c) [2026] [Selene Kanagusico L.]
+
+Este repositorio y su contenido (incluyendo, pero no limitado a, código fuente HTML, CSS, JavaScript, imágenes, diseño de interfaz y textos) son propiedad exclusiva del autor.
+
+Queda estrictamente prohibida la copia, distribución, modificación, uso comercial o uso personal de este software y de los datos personales aquí contenidos (nombres, teléfonos, redes sociales o información de la clínica) sin el consentimiento previo, expreso y por escrito del titular de los derechos de autor.
+
+Este proyecto se comparte únicamente con fines de visualización para el portafolio profesional del autor. 
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO.
